@@ -13,8 +13,8 @@ module.exports = new Schema({
 		required: false
 	},
 	isComplete: {
-		type: String,
+		type: Boolean,
 		unique: false,
-		required: false
+		required: true
 	}
 });
