@@ -1,0 +1,15 @@
+{
+  "name": "task-tracker-dependency-injection",
+  "version": "1.0.0",
+  "description": "Task tracker app showing dependency injection pattern",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dependency",
+    "injection"
+  ],
+  "author": "Egor Panok",
+  "license": "MIT"
+}
