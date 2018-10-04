@@ -12,7 +12,7 @@ module.exports = new Schema({
 		unique: false,
 		required: false
 	},
-	isComplete: {
+	completed: {
 		type: Boolean,
 		unique: false,
 		required: true
