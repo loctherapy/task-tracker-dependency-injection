@@ -16,5 +16,3 @@ tasksGenerator.generate().then((tasks) => {
 		console.log(`Task name: "${ tasks[i].name }". Completed: ${ tasks[i].completed }`);
 	}
 });
-
-
