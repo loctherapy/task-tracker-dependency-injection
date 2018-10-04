@@ -8,7 +8,7 @@ const taskGeneratorFactory  = require('./data-gen/task-generator');
 
 // Instances
 const prodConnection 	= dbConnectionFactory(config.dbUris.prod);
-const Task 		= modelFactory(prodConnection, 'Task', TaskSchema);
+const Task				= modelFactory(prodConnection, 'Task', TaskSchema);
 const tasksGenerator	= taskGeneratorFactory(Task, config.generate.tasks);
 
 tasksGenerator.generate().then((tasks) => {
