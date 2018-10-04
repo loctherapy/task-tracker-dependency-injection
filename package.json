@@ -4,8 +4,7 @@
 	"description": "Task tracker app showing dependency injection pattern",
 	"main": "server/app.js",
 	"scripts": {
-		"start": "node server/app.js",
-		"gen": "node server/data-gen.js"
+		"start": "node server/app.js"
 	},
 	"keywords": [
 		"dependency",

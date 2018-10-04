@@ -9,10 +9,14 @@ const TaskSchema	= require('./data-access/schemas/task');
 // Factories
 const dbConnectionFactory	= require('./data-access/dbConnection');
 const modelFactory  		= require('./data-access/model');
+const dataGeneratorFactory	= require('./data-gen/data-generator');
 
 // Instances
 const prodConnection 	= dbConnectionFactory(config.dbUris.prod);
 const Task 				= modelFactory(prodConnection, 'Task', TaskSchema);
+const dataGenerator 	= dataGeneratorFactory(prodConnection, config.generate);
+
+dataGenerator.generate();
 
 app.use(bodyParser.urlencoded({ extended: false })) // get our request parameters
 .use(jsonParser);
