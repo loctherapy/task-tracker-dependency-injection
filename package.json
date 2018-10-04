@@ -1,15 +1,20 @@
 {
-  "name": "task-tracker-dependency-injection",
-  "version": "1.0.0",
-  "description": "Task tracker app showing dependency injection pattern",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "dependency",
-    "injection"
-  ],
-  "author": "Egor Panok",
-  "license": "MIT"
+	"name": "task-tracker-dependency-injection",
+	"version": "1.0.0",
+	"description": "Task tracker app showing dependency injection pattern",
+	"main": "server/app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"dependency",
+		"injection",
+		"dependency injection"
+	],
+	"author": "Egor Panok",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.16.3",
+		"mongoose": "^5.3.1"
+	}
 }
