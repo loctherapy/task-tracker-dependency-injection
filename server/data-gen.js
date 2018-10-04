@@ -7,9 +7,9 @@ const modelFactory  		= require('./data-access/model');
 const taskGeneratorFactory  = require('./data-gen/task-generator');
 
 // Instances
-const prodConnection 	= dbConnectionFactory(config.dbUris.test);
-const TaskModel 		= modelFactory(prodConnection, 'Task', TaskSchema);
-const tasksGenerator	= taskGeneratorFactory(TaskModel, config.generate.tasks);
+const prodConnection 	= dbConnectionFactory(config.dbUris.prod);
+const Task 		= modelFactory(prodConnection, 'Task', TaskSchema);
+const tasksGenerator	= taskGeneratorFactory(Task, config.generate.tasks);
 
 tasksGenerator.generate().then((tasks) => {
 	for (let i = 0; i < tasks.length; i++) {

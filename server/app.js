@@ -12,13 +12,19 @@ const modelFactory  		= require('./data-access/model');
 
 // Instances
 const prodConnection 	= dbConnectionFactory(config.dbUris.prod);
-const TaskModel 		= modelFactory(prodConnection, 'TaskModel', TaskSchema);
+const Task 				= modelFactory(prodConnection, 'Task', TaskSchema);
 
 app.use(bodyParser.urlencoded({ extended: false })) // get our request parameters
 .use(jsonParser);
 
 app.get('/tasks', (req, res, next) => {
-	return res.json("Hello");
+	Task.find((err, tasks) => {
+		if(err) {
+			return res.sendStatus(400);
+		}
+
+		return res.json(tasks);
+	});
 });
 
 app.listen(port, () => console.log("Listening on port ", port));
