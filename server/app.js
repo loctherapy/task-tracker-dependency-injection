@@ -6,7 +6,6 @@ const jsonParser 	= bodyParser.json();
 const config 		= require("./config");
 const port			= config.port;
 
-mongoose.connect(config.dbUri); // connect to database
 
 app.use(bodyParser.urlencoded({ extended: false })) // get our request parameters
 .use(jsonParser);
