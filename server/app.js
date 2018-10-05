@@ -21,7 +21,7 @@ dataGenerator.generate();
 app.use(bodyParser.urlencoded({ extended: false })) // get our request parameters
 .use(jsonParser);
 
-app.get('/tasks', (req, res, next) => {
+app.get('/tasks', (req, res) => {
 	Task.find((err, tasks) => {
 		if(err) {
 			return res.sendStatus(400);
