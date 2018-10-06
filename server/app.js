@@ -11,11 +11,15 @@ const dbConnectionFactory	= require('./data-access/dbConnection');
 const modelFactory  		= require('./data-access/model');
 const dataGeneratorFactory	= require('./data-gen/data-generator');
 
-// Instances
-const prodConnection 	= dbConnectionFactory(config.dbUris.prod);
-const Task 				= modelFactory(prodConnection, 'Task', TaskSchema);
-const dataGenerator 	= dataGeneratorFactory(prodConnection, config.generate);
+// Prod Instances
+const connection 		= dbConnectionFactory(config.dbUris.prod);
+const Task 				= modelFactory(connection, 'Task', TaskSchema);
 
+// Test Instances
+const testConnection 	= dbConnectionFactory(config.dbUris.test);
+const dataGenerator 	= dataGeneratorFactory(testConnection, config.generate);
+
+// Generate Test DB
 dataGenerator.generate();
 
 app.use(bodyParser.urlencoded({ extended: false })) // get our request parameters
