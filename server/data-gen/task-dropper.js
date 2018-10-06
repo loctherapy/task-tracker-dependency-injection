@@ -1,8 +1,8 @@
-module.exports = (Task) => {
+module.exports = (TaskModel) => {
 	return {
 		drop: () => {
 			return new Promise((resolve, reject) => {
-				Task.deleteMany((err, res) => {
+				TaskModel.deleteMany((err, res) => {
 					if(err) {
 						return reject(err);
 					}
